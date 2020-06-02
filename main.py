@@ -12,4 +12,4 @@ f_temp = weather.temperature('fahrenheit')['temp']
 
 print(weather)
 print('...')
-print(f'Your local weather is {weather.status} with a temperature of {f_temp}{degree_sign}F')
+print(f'Your local weather is {weather.detailed_status} with a temperature of {f_temp}{degree_sign}F')
