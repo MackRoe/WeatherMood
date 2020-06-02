@@ -8,7 +8,7 @@ obs = mgr.weather_at_place('San Francisco, US')
 
 
 weather = obs.weather
-f_temp = weather.temperature('fahrenheit')['temp']
+f_temp = int(weather.temperature('fahrenheit')['temp'])
 
 print(weather)
 print('...')
