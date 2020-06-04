@@ -18,7 +18,7 @@ print(f'{f_temp}{degree_sign}F')
 mood = input('How does that make you feel? ')
 print(f'When the weather is {weather.detailed_status} and {f_temp}{degree_sign}F, you feel {mood}.')
 
-current_date = datetime.date(datetime.now())
+current_date = [datetime.date(datetime.now()).month, datetime.date(datetime.now()).day, datetime.date(datetime.now()).year ]
 current_weather = [weather.detailed_status, f_temp]
 weather_mood_date = [current_weather, mood, current_date]
 print('...')
