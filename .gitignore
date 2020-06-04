@@ -1,3 +1,4 @@
 env
 settings.py
 __pycache__
+weather_mood.csv

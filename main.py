@@ -1,6 +1,7 @@
 from settings import OWM_KEY
 import pyowm
 from datetime import datetime
+import pandas as pd
 
 degree_sign = u'\N{DEGREE SIGN}'
 owm = pyowm.OWM(OWM_KEY)
@@ -23,3 +24,9 @@ current_weather = [weather.detailed_status, f_temp]
 weather_mood_date = [current_weather, mood, current_date]
 print('...')
 print(list(weather_mood_date))
+
+# use pandas to create dataframe
+df = pd.DataFrame(weather_mood_date)
+
+# use pandas to create csv
+df.to_csv('weather_mood.csv', index=False)
