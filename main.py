@@ -30,5 +30,5 @@ def get_weathermood():
 # use pandas to create dataframe
 df = pd.DataFrame(weather_mood_date)
 
-# use pandas to create csv
+# use pandas to create csv`
 df.to_csv('weather_mood.csv', index=False)

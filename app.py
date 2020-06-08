@@ -11,6 +11,17 @@ weathermoods = db.weathermoods
 weather/mood data'''
 
 
-@app.route('/weather_mood_list')
-def weather_mood_list():
-    return
+@app.route('/')
+def index():
+    """Return homepage."""
+    return render_template('home.html', msg='Weather/Mood is Cool!!')
+
+@app.route('/weather_moods')
+def weathermood_index():
+    return render_template('weathermood_index.html', weathermoods=weathermoods)
+
+
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
