@@ -4,8 +4,8 @@ from pymongo import MongoClient
 app = Flask(__name__)
 
 client = MongoClient()
-db = client.Playlister
-playlists = db.playlists
+db = client.WeatherMood
+weathermoods = db.weathermoods
 
 ''' #TODO/DOING: set up an endpoint to deliver collected
 weather/mood data'''
