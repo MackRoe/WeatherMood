@@ -23,10 +23,12 @@ def index():
     """Return homepage test page"""
     return render_template('home.html', msg='Weather/Mood is Cool!!')
 
+@app.route('/moodslist')
+def moodslist():
+    '''Show recorded moods'''
+    return render_template('weathermood_index.html', moods=moods.find())
 
 @app.route('/mood', methods=['POST'])
-# route for list of each day's weather and mood
-# maybe change '/weathermoods' to '/' after populating db
 def wm_submit():
     '''submit a new mood'''
     # get the mood ID
