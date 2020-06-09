@@ -4,12 +4,9 @@
 {% block content %}
 <div class='row'>
     <div class='col-sm-6 col-sm-offset-3'>
-        <form method='POST' action='/moods'>
+        {% include 'weather_today.html' %}
+        <form method='POST' action='/mood'>
             {% include 'partials/mood_form.html' %}
-            <!-- BUTTON -->
-            <div class='form-group'>
-                <button class='btn btn-primary' type='submit'>Save Mood</button>
-            </div>
         </form>
     </div>
 </div>

@@ -12,6 +12,9 @@
 8. go to terminal and enter the following:
     python3 main.py
 
+## APP Version
+After entering a token mood, the server will start on [Local Host](localhost:5000). Load in browser.
+
 
 ### Install OpenWeatherMap
 by entering `pip3 instal pyowm` in the terminal

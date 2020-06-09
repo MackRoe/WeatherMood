@@ -24,12 +24,19 @@ def index():
     return render_template('home.html', msg='Weather/Mood is Cool!!')
 
 
-@app.route('/wm')
+@app.route('/mood', methods=['POST'])
 # route for list of each day's weather and mood
-# change '/weathermoods' to '/' after populating db
-def weathermood_index():
-    return render_template('weathermood_index.html', moods=moods.find())
-
+# maybe change '/weathermoods' to '/' after populating db
+def wm_submit():
+    '''submit a new mood'''
+    # get the mood ID
+    mood_ids = request.form.get('mood_ids')
+    mood = {
+        'mood': request.form.get('mood')
+    }
+    moods.insert_one(mood)
+    # return render_template('weathermood_index.html', moods=moods.find())
+    return redirect(url_for('index'))
 
 @app.route('/new_mood')
 def new_mood():
@@ -42,7 +49,7 @@ def new_mood():
     print(mood)
     mood_id = moods.insert_one(mood).inserted_id
     # print(request.form.to_dict())
-    return redirect(url_for('/', mood_id=mood_id))
+    return render_template('new_mood.html')
 
 @app.route('/weather_today')
 def view_weather_today():

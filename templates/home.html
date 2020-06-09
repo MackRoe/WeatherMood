@@ -3,11 +3,12 @@
 
 {% block content %}
     <h1>Weather/Mood</h1>
+    {% include 'partials/weather_today.html' %}
     {% for mood in moods %}
 
-    <strong>{{ moods.mood }}</strong>
+        <strong>{{ moods.mood }}</strong>
     <!-- check these names -->
-{% endfor %}
+    {% endfor %}
 
     <!-- New link here -->
 <a href='/new_mood'>Add a New Weather-Mood</a>
