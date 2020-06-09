@@ -3,6 +3,11 @@
 
 {% block content %}
     <h1>Weather/Mood</h1>
+    {% for mood in moods %}
+
+    <strong>{{ moods.mood }}</strong>
+    <!-- check these names -->
+{% endfor %}
 
     <!-- New link here -->
 <a href='/new_mood'>Add a New Weather-Mood</a>
