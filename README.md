@@ -13,7 +13,7 @@
     python3 main.py
 
 ## APP Version
-After entering a token mood, the server will start on [Local Host](localhost:5000). Load in browser.
+After entering a token mood, the server will start on [Local Host](http://localhost:5000). Load in browser.
 
 
 ### Install OpenWeatherMap
