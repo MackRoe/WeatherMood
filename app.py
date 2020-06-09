@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
-from main import weather_today
+from main import weather_today, parse_date
 
 app = Flask(__name__)
 
@@ -27,14 +27,15 @@ def weathermood_index():
 
 @app.route('/new_mood')
 def new_mood():
-    """Create a new playlist."""
+    """Add a new mood entry"""
     return render_template('new_mood.html')
 
 @app.route('/weather_today')
 def view_weather_today():
     '''Display today's weather'''
     weather = weather_today()
-    return render_template('weather_today.html', weather=weather)
+    date = parse_date()
+    return render_template('weather_today.html', weather=weather, date=date)
 
 if __name__ == '__main__':
     app.run(debug=True)

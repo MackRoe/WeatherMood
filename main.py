@@ -10,7 +10,7 @@ obs = mgr.weather_at_place('San Francisco, US')
 
 
 weather = obs.weather
-f_temp = int(weather.temperature('fahrenheit')['temp'])
+f_temp = str(int(weather.temperature('fahrenheit')['temp']))
 
 # def get_weathermood():
 print(weather)
@@ -32,8 +32,16 @@ df = pd.DataFrame(weather_mood_date)
 
 def weather_today():
     weather_string = "Today's weather is " + weather.detailed_status
-    temperature_string = "with a temperature of " + f_temp + degree_sign
+    temperature_string = (f"with a temperature of {f_temp}{degree_sign}F")
     return weather_string + " " + temperature_string
+
+def parse_date():
+    months = {1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May',
+              6: 'June', 7: 'July', 8: 'August', 9: 'September', 10: 'October',
+              11: 'November', 12: 'December'}
+    word_month = months[current_date[0]]
+    parsed_date = (f'{word_month} {current_date[1]}, {current_date[2]}')
+    return parsed_date
 
 # use pandas to create csv`
 df.to_csv('weather_mood.csv', index=False)
