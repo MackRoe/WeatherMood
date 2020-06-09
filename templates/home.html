@@ -1,9 +1,14 @@
 <!-- templates/home.html -->
 {% extends 'base.html' %}
 
+{% block weather %}
+{% endblock %}
+
 {% block content %}
     <h1>Weather/Mood</h1>
     {% include 'partials/weather_today.html' %}
+    <p>
+        <a href="weather_today">Today's Weather</a>
     {% for mood in moods %}
 
         <strong>{{ moods.mood }}</strong>
@@ -11,5 +16,6 @@
     {% endfor %}
 
     <!-- New link here -->
+    <p>
 <a href='/new_mood'>Add a New Weather-Mood</a>
 {% endblock %}
